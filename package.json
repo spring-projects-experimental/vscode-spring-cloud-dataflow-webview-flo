@@ -13,7 +13,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish:next": "npm version $(semver $npm_package_version)-next.$(git rev-parse --short HEAD) -no-git-tag-version && npm run build && npm run webpack-prod && npm pack && npm publish pivotal-tools-vscode-spring-cloud-dataflow-webview-flo-$(semver $npm_package_version)-next.$(git rev-parse --short HEAD).tgz --tag next --registry https://repo.spring.io/api/npm/npm-snapshot-local && npm version $(semver $npm_package_version) -no-git-tag-version"
   },
   "private": true,
   "dependencies": {
